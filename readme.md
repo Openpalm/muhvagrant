@@ -16,7 +16,7 @@
 * cd ~/vagrant/fedora24-cloud-base
 * vagrant init fedora/24-cloud-base; vagrant up --provider libvirt
 
-### once the machine is up and running, let's provision it with nice things. copy your favorite bootstrap.sh (naming convention for provisionning files - you can take a look at the ine in this repo which is made for a Typo3 installation) and then:
+#### once the machine is up and running, let's provision it with nice things. copy your favorite bootstrap.sh (naming convention for provisionning files - you can take a look at the ine in this repo which is made for a Typo3 installation) and then:
 * vagrant reload --provision
 
 
