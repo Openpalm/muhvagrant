@@ -1,7 +1,6 @@
 # Vagrant/Libvirt Fedora cloud vm.
 Please view the Vagrantfile and bootstrap.sh for details about what is being installed.
 
-## working with libvirt/libvirt
 ## let's make sure we install qemu/libvirt and get things running
 
 * sudo dnf install @virtualization
@@ -10,8 +9,8 @@ Please view the Vagrantfile and bootstrap.sh for details about what is being ins
 
 ## after you get qemu up and running (that's what libvirt is).
 ## go on and do install vagrant and install the vagrant libvirt plugin:
-sudo dnf install vagrant
-vagrant plugin install vagrant-libvirt
+* sudo dnf install vagrant
+* vagrant plugin install vagrant-libvirt
 
 ## make a vagrant directory somewhere nice:
 * mkdir ~/vagrant
