@@ -9,10 +9,11 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "fedora/24-cloud-base"
   config.vm.provision :shell, path: "bootstrap.sh"
+  config.vm.provision "shell", path: "mysql_bootstrap.sh"
   # nginx
-  config.vm.network :forwarded_port, guest: 80, host: 4567
-  # mariadb
-  config.vm.network :forwarded_port, guest: 6999, host: 6999
+  config.vm.network :forwarded_port, guest: 80, host: 8080
+
+#  config.vm.network "private_network", ip: "192.168.121.200", type: "static"
 
 
   # The most common configuration options are documented and commented below.
@@ -73,8 +74,4 @@ Vagrant.configure("2") do |config|
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
-  # config.vm.provision "shell", inline: <<-SHELL
-  #   sudo apt-get update
-  #   sudo apt-get install -y apache2
-  # SHELL
 end

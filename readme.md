@@ -1,6 +1,11 @@
 # Vagrant/Libvirt Fedora cloud vm.
 **Please view the Vagrantfile and bootstrap.sh for details about what is being installed.**
 
+
+## once done, access the webserver and the mysql server as follows
+* http://localhost:8080
+* mysql --host=192.168.121.9 -u root -p
+
 ## let's make sure we install qemu/libvirt and get things running
 * sudo dnf install @virtualization
 * sudo systemctl enable libvirtd

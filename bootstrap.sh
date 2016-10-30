@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# vagrant provisionning file for typo3
-# using a fedora24-cloud base.
+# vagrant provisionning file for a fedora24-cloud
+# to run a typo3 instance
 
 # making sure everyting is upto date.
 dnf update
@@ -24,6 +24,7 @@ dnf install -y freetype
 dnf install -y mariadb-server
 dnf install -y mariadb
 
+
 # our lifting engine - port forwarding inside Vagrantfile
 dnf install -y nginx
 
@@ -39,11 +40,3 @@ if ! [ -L /var/www ]; then
   rm -rf /var/www
   ln -fs /vagrant /var/www
 fi
-
-#Php Configuration @ taken from https://github.com/Lukx/vagrant-lamp/blob/master/components/php.sh
-
-#sed -i "s/upload_max_filesize = 2M/upload_max_filesize = 10M/" /etc/php5/apache2/php.ini
-#sed -i "s/short_open_tag = On/short_open_tag = Off/" /etc/php5/apache2/php.ini
-#sed -i "s/;date.timezone =/date.timezone = Europe\/Berlin/" /etc/php5/apache2/php.ini
-#sed -i "s/memory_limit = 128M/memory_limit = 1024M/" /etc/php5/apache2/php.ini
-#sed -i "s/_errors = Off/_errors = On/" /etc/php5/apache2/php.ini
