@@ -4,7 +4,8 @@
 # to run a typo3 instance
 
 # making sure everyting is upto date.
-dnf update
+dnf update -y
+dnf upgrade -y
 
 # making sure we have an easy time inside the machine
 dnf install -y git
@@ -12,6 +13,8 @@ dnf install -y vim-enhanced
 dnf install -y wget
 dnf install -y curl
 dnf install -y htop
+dnf install -y tree
+dnf install -y inotify-tools
 
 # typo3 php pre-reqs
 dnf install -y php-common
@@ -31,12 +34,12 @@ dnf install -y nginx
 # services init
 systemctl enable mariadb.service
 systemctl start mariadb.service
-systemctl enable nginx.service
-systemctl start nginx.service
+#systemctl enable nginx.service
+#systemctl start nginx.service
 
 #directory layout, links and permissions.
 
 if ! [ -L /var/www ]; then
   rm -rf /var/www
-  ln -fs /vagrant /var/www
+  ln -fs /vagrant/www /var/www
 fi

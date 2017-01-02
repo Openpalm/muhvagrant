@@ -6,9 +6,6 @@
 * http://localhost:8080
 * mysql --host=192.168.121.9 -u root -p
 
-## the machine syncs to a directory
-* run dofirst.sh to make sure the firewall plays nice 
-* more info @ https://developer.fedoraproject.org/tools/vagrant/vagrant-nfs.html
 ## let's make sure we install qemu/libvirt and get things running
 * sudo dnf install @virtualization
 * sudo systemctl enable libvirtd
